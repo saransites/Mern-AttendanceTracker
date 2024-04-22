@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./Authenticate.css";
-import auth from '../../firebase'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
 import Signup from "./Signup";
 import Login from "./Login";
 const Authentication = () => {

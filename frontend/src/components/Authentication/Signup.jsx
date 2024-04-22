@@ -39,12 +39,13 @@ const Signup = ({ handlesignup }) => {
                 <label className="block text-left font-semibold">Password</label>
                 <input type="password" value={signdata.password} onChange={handlesign} name="password" className="mt-1 px-4 py-2 w-full border text-black border-gray-300 rounded-md focus:outline-none focus:border-blue-500" required></input>
             </div>
-            <input
+            <button
             type="submit"
         onClick={handlesignup}
         className="bg-[#4d4d4d] border text-white transition-all hover:bg-[#8272928d] p-2 px-6 rounded"
       >
-      </input>
+        Signup
+      </button>
         </form>
       
     </div>

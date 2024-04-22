@@ -4,23 +4,30 @@ import { useNavigate } from 'react-router-dom'
 import Adminpage from './Admin/Adminpage'
 import Employeepage from './Employees/Employeepage'
 const Landingpage = () => {
+    const data=[
+        {
+            pos:"Admin",
+            content:"Only admin can login the page"
+        },
+        {
+            pos:"Employee",
+            content:"Only Employee can login the page"
+        }
+    ]
     const navigate=useNavigate()
-    const [ admin,setadmin ]=useState("")
-    useEffect(()=>{
-        auth.onAuthStateChanged((user)=>{
-            if(user){
-                navigate('/landing')
-                if(user.uid == "QYM4DEGs8qfZgPxS8dPGbadovaf2"){
-                    setadmin(true)
-                }else{
-                    setadmin(false)
-                }
-            }
-        })
-    },[])
+    const handlepage=()=>{
+        navigate(`/login`)
+    }
   return (
-    <div>
-        {admin ? <Adminpage/>:<Employeepage/>}
+    <div className='flex flex-col md:flex-row gap-4 justify-center items-center h-screen'>
+        {
+            data.map((item,index)=>{
+                return <div key={index} onClick={handlepage} className='bg-[#4f397c] cursor-pointer p-4 text-center w-3/4 md:w-[45%]'>
+                <h1 className='font-bold text-xl'>{item.pos}</h1>
+                <p>{item.content}</p>
+            </div>
+            })
+        }
     </div>
   )
 }
