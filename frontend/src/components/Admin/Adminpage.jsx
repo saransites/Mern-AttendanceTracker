@@ -2,6 +2,7 @@ import { signOut } from "firebase/auth";
 import React, { useEffect } from "react";
 import auth from "../../firebase";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios'
 import './Adminpage.css'
 const Adminpage = () => {
   const navigate = useNavigate();

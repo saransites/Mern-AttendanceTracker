@@ -37,8 +37,10 @@ app.post("/employeedata", async (req, res) => {
 
     // Check if the name already exists
     const existDate = await Credential.findOne({ date });
-    if (existDate) {
-      return res.status(400).send("Already submit your work in this date");
+    const existName= await Credential.findOne({ name });
+
+    if (existDate && existName) {
+      return res.status(400).send("Already submit your work on this day");
     }
     // Create a new data object
     const newData = new Credential({

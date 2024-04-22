@@ -25,7 +25,7 @@ const Employeepage = () => {
         setTime(time);
         setDate(date.slice(0,10));
         setemployeename(user.email.slice(0,user.email.indexOf('@')))
-        setid(user.uid.slice(0,-5))
+        setid(user.uid)
       }
     });
   }, []);
